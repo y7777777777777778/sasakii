@@ -1,0 +1,45 @@
+body {
+  font-family: "Poppins", "Noto Sans JP", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background: #f3f4f6;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+a {
+  display: inline-block;
+  padding: 12px 28px;
+  text-decoration: none;
+  background: linear-gradient(135deg, #4285f4, #34a853);
+  color: white;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.1);
+}
+
+.iframe-view {
+  width: 90%;
+  height: 70vh;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: white;
+}
