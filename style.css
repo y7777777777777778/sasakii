@@ -1,112 +1,62 @@
-/* === ベース === */
+/* 全体のダークテーマ設定 */
 body {
-  font-family: "Poppins", "Noto Sans JP", sans-serif;
-  background: radial-gradient(circle at top left, #090909, #000);
-  color: #fff;
-  text-align: center;
   margin: 0;
-  padding: 40px 20px;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* 背景の光の演出 */
-body::before {
-  content: "";
-  position: fixed;
-  top: -100px;
-  left: -100px;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(0, 180, 255, 0.3), transparent 70%);
-  animation: moveGlow 8s ease-in-out infinite alternate;
-}
-@keyframes moveGlow {
-  from { transform: translate(0, 0); }
-  to { transform: translate(200px, 200px); }
-}
-
-/* === タイトル === */
-h1 {
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 30px;
-  background: linear-gradient(90deg, #00f0ff, #00bfff, #0072ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: titleGlow 3s ease-in-out infinite alternate;
-}
-@keyframes titleGlow {
-  from { text-shadow: 0 0 10px #00bfff; }
-  to { text-shadow: 0 0 25px #00f0ff; }
-}
-
-/* === ボタン配置 === */
-.button-box {
+  background-color: #0d1117;
+  color: #e6edf3;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ヘッダー部分 */
+header {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
-/* === ボタン === */
-a {
+  background: linear-gradient(90deg, #111827, #1f2937);
+  padding: 10px 20px;
   position: relative;
-  display: inline-block;
-  padding: 14px 34px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: white;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 14px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 0 12px rgba(0, 180, 255, 0.4);
-  transition: all 0.3s ease;
-  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
-/* ホバー時に発光＆浮遊 */
-a::before {
-  content: "";
+/* 左固定ホームボタン */
+.header-left {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(120deg, rgba(0,255,255,0.3), rgba(0,180,255,0.1), transparent);
-  transform: rotate(25deg);
-  transition: 0.5s;
-  opacity: 0;
-}
-a:hover::before {
-  opacity: 1;
-  animation: shine 1s forwards;
-}
-@keyframes shine {
-  from { transform: translateX(-100%) rotate(25deg); }
-  to { transform: translateX(100%) rotate(25deg); }
-}
-a:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 25px rgba(0, 200, 255, 0.7);
-  border-color: rgba(0, 200, 255, 0.5);
+  left: 20px;
 }
 
-/* === iframe === */
-iframe {
-  width: 90%;
-  height: 70vh;
-  border: none;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 25px rgba(0, 180, 255, 0.2);
-  transition: all 0.3s ease;
+.home-btn {
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
 }
-iframe:hover {
-  box-shadow: 0 0 40px rgba(0, 200, 255, 0.3);
+
+.home-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* タイトル文字 */
+.site-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* iframe本体 */
+main {
+  flex: 1;
+  display: flex;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #0d1117;
 }
